@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SLMS</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+  <div class="container">
+    <h1>SLMS</h1>
+    <p>Staff Leave Management System</p>
+
+    <div class="btn-group">
+      <a href="{% url 'login' %}" class="login-btn">Login</a>
+      <a href="{% url 'register' %}" class="register-btn">Register</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Dhee Coding Lab (DCL) | All Rights Reserved
+  </footer>
+
+</body>
+</html>

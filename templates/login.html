@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+</head>
+<body>
+  <center>
+    <h2> SLMS Login</h2>
+    <P>Staff Leave Management System</P>
+    <form method="post">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="username" required>
+      <input type="password" name="password" id="" placeholder="password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div>
+      <p>Don't have an account?<a href="{%url 'register' %}">register</a></p>
+      <p><a href="{% url 'home' %}">Back To Home</a></p>
+    </div>
+  </center>
+</body>
+</html>

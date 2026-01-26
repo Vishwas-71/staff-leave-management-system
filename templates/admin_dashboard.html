@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | SLMS</title>
+
+  <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+</head>
+<body>
+
+  <div class="admin-container">
+
+    <h2>Admin Dashboard</h2>
+    <p class="subtitle">Staff Leave Management System</p>
+
+    <div class="row">
+      <div class="row-text">
+        <h3>Leave Requests</h3>
+        <p>View and manage all staff leave applications.</p>
+      </div>
+      <a href="#">Open</a>
+    </div>
+
+    <div class="row">
+      <div class="row-text">
+        <h3>Total Leave Requests</h3>
+        <p>Track all submitted leave requests.</p>
+      </div>
+      <a href="#">View</a>
+    </div>
+
+    <div class="row">
+      <div class="row-text">
+        <h3>Staff Management</h3>
+        <p>View and manage registered staff users.</p>
+      </div>
+      <a href="#">Manage</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

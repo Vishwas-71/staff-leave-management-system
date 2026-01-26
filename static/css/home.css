@@ -1,0 +1,76 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main container */
+.container {
+  max-width: 450px;
+  margin: auto;
+  text-align: center;
+  padding: 70px 30px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #1f3c88;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 45px;
+  color: #555;
+}
+
+/* Buttons */
+.btn-group a {
+  text-decoration: none;
+  padding: 14px 36px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Login & Register buttons */
+.login-btn,
+.register-btn {
+  background-color: #ffffff;
+  color: #1f3c88;
+  border: 2px solid #1f3c88;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  background-color: #1f3c88;
+  color: #ffffff;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  background-color: #1f3c88;
+  color: #ffffff;
+  text-align: center;
+  padding: 18px;
+  font-size: 15px;
+}

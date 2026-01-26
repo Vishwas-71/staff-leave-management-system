@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | SLMS</title>
+
+
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+
+  <div class="register-container">
+    <h1>SLMS Register</h1>
+    <p class="subtitle">Create your Staff Leave Management account</p>
+
+    <form method="POST">
+      {% csrf_token %}
+
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+
+      <select name="role" required>
+        <option value="">-- Select Role --</option>
+        <option value="admin">Admin</option>
+        <option value="staff">Staff</option>
+      </select>
+
+      <p class="role-info">
+        Admin users can manage staff and approve leave requests.
+      </p>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="links">
+      <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+      <p><a href="{% url 'home' %}">← Back to Home</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
