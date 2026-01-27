@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f7, #f8fafc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Heading */
+.head {
+  position: absolute;
+  top: 60px;
+  text-align: center;
+  width: 100%;
+}
+
+.head h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f3c88;
+}
+
+/* Card container */
+.container {
+  width: 420px;
+  background: #ffffff;
+  padding: 30px 28px;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #2563eb;
+}
+
+/* Button */
+button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #16a34a;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #15803d;
+}
+
+/* Back link */
+.container a {
+  display: block;
+  margin-top: 18px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}

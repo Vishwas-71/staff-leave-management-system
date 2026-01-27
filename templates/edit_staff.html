@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>edit staff</title>
+  <link rel="stylesheet" href="{% static 'css/edit_staff.css' %}">
+</head>
+<body>
+  <h2>Edit Staff Page</h2>
+  <div class="container">
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="username"  placeholder="Username">
+      <label>New Password</label>
+      <input type="password" name="password" placeholder="leave blank to keep current password">
+      <button type="submit">Update Staff</button>
+    </form>
+    <a href="{% url 'manage_staff' %}">Back to Manage Staff</a>
+  </div>
+</body>
+</html>

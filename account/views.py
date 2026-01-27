@@ -1,4 +1,4 @@
-from django.shortcuts import render , redirect
+from django.shortcuts import render , redirect , get_object_or_404
 from account.models import Profile
 from django.contrib.auth.models import User  
 from django.contrib.auth import authenticate   , login , logout
@@ -45,3 +45,49 @@ def admin_dashboard(request):
 def logout_view(request):
   logout(request)
   return redirect('home')
+
+@login_required
+def manage_staff(request):
+  if request.user.profile.role != 'admin':
+    return redirect('staff_dashbord')
+  
+  staff_list = User.objects.filter(profile__role = "staff")
+  d = {'staff_list' : staff_list}
+  return render(request , 'manage_staff.html' , d)
+
+
+@login_required
+def add_staff(request):
+  if request.user.profile.role !='admin':
+    return redirect('staff_dashboard')
+  if request.method == "POST":
+    username = request.POST['username']
+    password = request.POST['password']
+    user = User.objects.create_user(username = username , password=password)
+    Profile.objects.create(user=user , role='staff')
+    return redirect('manage_staff')
+  return render(request , 'add_staff.html')
+
+@login_required
+def edit_staff(request ,id):
+  if request.user.profile.role != 'admin':
+    return redirect('staff_dashboard')
+  user = get_object_or_404(User , id=id )
+  if request.method == "POST":
+   user.username = request.POST['username']
+   user.save()
+   return redirect('manage_staff')
+  d = {'user' : user}
+  return render(request , 'edit_staff.html' , d)
+
+
+@login_required
+def delete_staff(request , id):
+  if request.user.profile.role != 'admin':
+    return redirect('staff_dashboard')
+  
+  user = get_object_or_404(User , id=id)
+  user.delete()
+  return redirect('manage_staff')
+
+
