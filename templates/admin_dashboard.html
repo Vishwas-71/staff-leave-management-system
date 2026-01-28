@@ -1,14 +1,24 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard | SLMS</title>
 
-  <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+  <link rel="stylesheet" href="{% static 'css/admin_dashboardd.css' %}">
 </head>
 <body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <h3>SLMS Admin</h3>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-btn">View Leave Requests</a>
+      <a href="{% url 'logout' %}" class="nav-btn logout">Logout</a>
+    </div>
+  </nav>
 
   <div class="admin-container">
 
@@ -20,7 +30,7 @@
         <h3>Leave Requests</h3>
         <p>View and manage all staff leave applications.</p>
       </div>
-      <a href="#">Open</a>
+      <a href="{% url 'view_leaves' %}">Open</a>
     </div>
 
     <div class="row">
@@ -28,7 +38,7 @@
         <h3>Total Leave Requests</h3>
         <p>Track all submitted leave requests.</p>
       </div>
-      <a href="#">View</a>
+      <a href="{% url 'view_leaves' %}">View</a>
     </div>
 
     <div class="row">

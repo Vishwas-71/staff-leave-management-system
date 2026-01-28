@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f3c88;
+  margin-bottom: 25px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  padding: 14px;
+  background: #212529;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  text-align: center;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status */
+.status {
+  font-weight: 700;
+}
+
+.Pending {
+  color: #f59e0b;
+}
+
+.Approved {
+  color: #16a34a;
+}
+
+.Rejected {
+  color: #dc2626;
+}
+
+/* Buttons */
+.btn {
+  padding: 6px 14px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+  color: #ffffff;
+  display: inline-block;
+  margin: 2px;
+}
+
+.approve {
+  background-color: #16a34a;
+}
+
+.approve:hover {
+  background-color: #15803d;
+}
+
+.reject {
+  background-color: #dc2626;
+}
+
+.reject:hover {
+  background-color: #b91c1c;
+}
+
+/* Empty state */
+.no-data {
+  padding: 20px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-top: 18px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

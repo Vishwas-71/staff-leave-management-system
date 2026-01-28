@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #f4f6f9;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f3c88;
+  margin-bottom: 25px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  padding: 14px;
+  background: #343a40;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  text-align: center;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status */
+.status {
+  font-weight: 700;
+}
+
+.Pending {
+  color: #f59e0b;
+}
+
+.Approved {
+  color: #16a34a;
+}
+
+.Rejected {
+  color: #dc2626;
+}
+
+/* Empty state */
+.no-data {
+  padding: 20px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-top: 18px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

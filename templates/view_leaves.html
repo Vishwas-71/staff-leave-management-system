@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Leave Requests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/view_leaves.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Staff Leave Requests</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Staff Name</th>
+                <th>Leave Type</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for leave in leaves %}
+            <tr>
+                <td>{{ leave.user.username }}</td>
+                <td>{{ leave.leave_type }}</td>
+                <td>{{ leave.start_date }}</td>
+                <td>{{ leave.end_date }}</td>
+                <td>{{ leave.reason }}</td>
+                <td class="status {{ leave.status }}">{{ leave.status }}</td>
+                <td>
+                    {% if leave.status == 'Pending' %}
+                        <a href="{% url 'approve_leave' leave.id %}" class="btn approve">
+                            Approve
+                        </a>
+                        <a href="{% url 'reject_leave' leave.id %}" class="btn reject">
+                            Reject
+                        </a>
+                    {% else %}
+                        —
+                    {% endif %}
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="7" class="no-data">No leave requests found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'admin_dashboard' %}" class="back-link">← Back to Admin Dashboard</a>
+</div>
+
+</body>
+</html>

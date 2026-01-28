@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply Leave</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/apply_leave.css' %}">
+</head>
+<body>
+
+<div class="leave-container">
+    <h2>Apply Leave</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Leave Type</label>
+        <select name="leave_type" required>
+            <option value="">Select Leave Type</option>
+            <option>Casual Leave</option>
+            <option>Sick Leave</option>
+            <option>Emergency Leave</option>
+        </select>
+
+        <label>Start Date</label>
+        <input type="date" name="start" required>
+
+        <label>End Date</label>
+        <input type="date" name="end" required>
+
+        <label>Reason</label>
+        <textarea name="reason" rows="3" required placeholder="Enter reason for leave"></textarea>
+
+        <button type="submit">Submit Leave</button>
+    </form>
+
+    <a href="#" class="back-link">Back to Dashboard</a>
+</div>
+
+</body>
+</html>
